@@ -11,8 +11,8 @@
 
 빌린 포인터가 완전히 안전함에도 불구하고, 런타임 중에 빌린 포인터는 C 프로그램에서의 평범한 포인터와 같다. 이것은 전혀 오버헤드가 없다. 컴파일러는 모든 안전성 검사를 컴파일 시간에 한다.
 
-비록 빌린 포인터가 정교한 이론상의 기반(지역 포인터)은 없지만, 핵심 컨셉은 C나 C++로 일하는 누구나에게 친숙할 것이다. Therefore, the best way to explain
-어떻게 사용되고—그것의 한계—is probably just to work 몇개의 예제를 통해.
+비록 빌린 포인터가 정교한 이론상의 기반(지역 포인터)은 없지만, 핵심 컨셉은 C나 C++로 일하는 누구나에게 친숙할 것이다. 
+빌린 포인터가 어떻게 사용되고 제한은 어디까지 인지를 설명하기위한 최고의 방법은 여러 예제를 통해 작업해보는 것 이다.
 
 # 예제를 통해 알아보기
 
@@ -69,7 +69,7 @@ compute_distance(managed_box, owned_box);
 
 여기, `&` 연산자는 `on_the_stack` 변수의 주소를 취한다.
 이는 `on_the_stack`는 `Point` 타입(즉, 구조체 값)을 가지고 값을 얻기 위해 그것의 주소를 취해야하기 때문이다.
-We also call this _borrowing_ the local variable `on_the_stack`, because we have created an alias:
+또한 우리는 이 _borrowing_ 지역변수를 'on_the_stack' 으로 콜 할수 있다 , 그이유는 우리가 : 라는 alias 로 지정을 해놓았기 때문이다.
 즉, 동일한 데이터에 대한 서로 다른 이름이다.
 
 반대로, `managed_box`와 `owned_box`를 `compute_distance`에 직접 넘길 수 있다.
